@@ -1,0 +1,21 @@
+<p>Tienda Works</p>
+<label>Nombre del parque:</label>
+<input type="text" [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()">
+<p>{{nombreDelParque}}</p>
+
+    <div *ngIf="miParque">
+        <hr>
+        <h2>Datos del parque pasando datos del hijo al padre con output</h2>
+        <ol>
+            <li>{{miParque.nombre}}</li>
+            <li>{{miParque.metros}}</li>
+            <li>{{miParque.vegetacion}}</li>
+            <li>{{miParque.abierto}}</li>
+        </ol>
+    </div>
+<hr>
+<app-parques *ngIf="nombreDelParque" 
+             [nombre]="nombreDelParque" 
+             [metros]="654"
+             (dataOutput)="readDataFromOutput($event)">
+</app-parques>
