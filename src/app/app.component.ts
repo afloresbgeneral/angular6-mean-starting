@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-root',
@@ -6,12 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'angular-avanzado';
+  title = 'NG-ZOO';
+  fromStorage: string;
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('emailContact'));
+    //console.log(localStorage.getItem('emailContact'));
+
+  //   $(document).ready(function() {
+  //     $('button').click(function() {
+  //         console.log('hey ');
+  //         const div = $('div');
+  //         div.animate({left: '100px'}, 'slow');
+  //         div.animate({fontSize: '5em'}, 'slow');
+  //     });
+  // });
 
   }
+
 }
 
 

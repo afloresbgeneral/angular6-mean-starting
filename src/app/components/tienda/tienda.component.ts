@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, OnDestroy } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-tienda',
@@ -13,23 +14,28 @@ export class TiendaComponent implements OnChanges,  OnInit, DoCheck {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('heyy');
-    console.log(changes);
+    // console.log('heyy');
+    // console.log(changes);
   }
 
   ngOnInit() {
-    console.log('inittt');
+
+    $('#storeButton').click(function() {
+      console.log('inittt');
+      $('#texto').removeAttr('hidden').slideToggle();
+    }
+    );
   }
 
   ngDoCheck(): void {
-    console.log('heyy');
+    // console.log('heyy');
   }
 
   mostrarNombre() {
   }
 
   readDataFromOutput(event) {
-    console.log(event);
+    // console.log(event);
     this.miParque = event;
   }
 

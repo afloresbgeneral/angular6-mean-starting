@@ -1,4 +1,12 @@
-<p>Tienda Works</p>
+<h4>Tienda Works</h4>
+<hr>
+<p>Usando jquery</p>
+<button id="storeButton">Mostrar Texto</button>
+<p hidden class="alert alert-warning" id="texto">Esto es un texto de prueba</p>
+
+<app-simple-tiny (onEditorKeyUp)="keyUpHandlerFunction($event)"></app-simple-tiny>
+
+<hr>
 <label>Nombre del parque:</label>
 <input type="text" [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()">
 <p>{{nombreDelParque}}</p>

@@ -1,3 +1,4 @@
+import { EmailModule } from './email-module/email.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +11,10 @@ import { HomeComponent } from './components/home/home.component';
 import { AnimalsComponent } from './components/animals/animals.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { KeeperComponent } from './components/keeper/keeper.component';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
+import { AdminModule } from './admin-module/admin.module';
 
 @NgModule({
   declarations: [
@@ -20,12 +24,17 @@ import { KeeperComponent } from './components/keeper/keeper.component';
     HomeComponent,
     AnimalsComponent,
     ContactComponent,
-    KeeperComponent
+    KeeperComponent,
+    SimpleTinyComponent
   ],
   imports: [
     BrowserModule,
+    AngularFontAwesomeModule,
     FormsModule,
-    routing
+    EditorModule,
+    routing,
+    EmailModule,
+    AdminModule
   ],
   providers: [
     appRoutingProviders

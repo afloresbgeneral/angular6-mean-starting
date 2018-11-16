@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.content {
+    margin: 2em;
+}
+
+.jumbotron {
+    box-shadow: 5px 5px 1px #ccc;
+}
+
+.navbar-nav .active {
+    border-bottom: 3px solid orange;
+}

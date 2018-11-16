@@ -1,3 +1,12 @@
-<p>
-  home works!
-</p>
+<div class="jumbotron">
+    <h1 class="display-4">{{title}}</h1>
+    <p class="lead">Disfruta de los animales más exóticos de nuestro zoologico</p>
+    <hr class="my-4">
+
+      <a class="btn btn-primary btn-lg" [routerLink]="['/animals']" role="button">Ver animales</a>
+      <a class="btn btn-success btn-lg" [routerLink]="['/keeper']" role="button">Ver cuidadores</a>
+      <a class="btn btn-warning btn-lg" [routerLink]="['/contact']" role="button">Contacta con nosotros</a>
+
+      <button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+  </div>
