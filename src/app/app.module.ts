@@ -1,6 +1,7 @@
 import { EmailModule } from './email-module/email.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
@@ -29,6 +30,7 @@ import { AdminModule } from './admin-module/admin.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFontAwesomeModule,
     FormsModule,
     EditorModule,

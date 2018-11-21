@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListAdminComponent implements OnInit {
 
   title = 'List Admin';
+  animals = new Array(10);
 
   constructor() { }
 

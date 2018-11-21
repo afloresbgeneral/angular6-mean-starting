@@ -1,5 +1,15 @@
 <h4>Tienda Works</h4>
 <hr>
+<div>
+    <button [@mark]="status" (click)="toggleState(status)"
+    type="button" class="active-button btn btn-success">{{buttonText}}</button>
+</div>
+<hr>
+<h3>ANIMACIONES CSS3</h3>
+<button type="button" class="button-transition">Transiciones</button>
+<div class="animated-box">
+</div>
+<hr>
 <p>Usando jquery</p>
 <button id="storeButton">Mostrar Texto</button>
 <p hidden class="alert alert-warning" id="texto">Esto es un texto de prueba</p>

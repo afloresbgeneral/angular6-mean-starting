@@ -1,1 +1,32 @@
 <h3>{{title}}</h3>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead class="thead-default">
+                <tr>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let n of animals; let i = index">
+                    <td>{{i+1}}. Oso Panda</td>
+                    <td>2017</td>
+                    <td>
+                        <button class="btn btn-sm btn-success">
+                            <span>View</span>
+                        </button>
+                        <button class="btn btn-sm btn-primary">
+                            <span>Edit</span>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <span>Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

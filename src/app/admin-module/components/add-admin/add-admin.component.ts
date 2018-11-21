@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddAdminComponent implements OnInit {
 
-  title = 'Add Admin';
+  title = 'Add Animals Admin';
 
   constructor() { }
 
