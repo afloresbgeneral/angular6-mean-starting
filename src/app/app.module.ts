@@ -16,6 +16,10 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
 import { AdminModule } from './admin-module/admin.module';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { UserService } from 'src/app/services/user.service';
 
 @NgModule({
   declarations: [
@@ -26,10 +30,13 @@ import { AdminModule } from './admin-module/admin.module';
     AnimalsComponent,
     ContactComponent,
     KeeperComponent,
-    SimpleTinyComponent
+    SimpleTinyComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
     FormsModule,
@@ -39,7 +46,8 @@ import { AdminModule } from './admin-module/admin.module';
     AdminModule
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

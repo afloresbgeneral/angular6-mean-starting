@@ -1,0 +1,33 @@
+<div class="col-6">
+  <form action="" #registerForm="ngForm" (ngSubmit)="onSubmit()" class="col-10">
+    <p>
+      <label>Name</label>
+      <input type="text" name="name" #name="ngModel" [(ngModel)]="userModel.name" class="form-control" required>
+      <span *ngIf="!name.valid && name.touched" class="is-required">
+        The name is required
+      </span>
+    </p>
+    <p>
+        <label>Lastname</label>
+        <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="userModel.lastName"  class="form-control" required>
+        <span *ngIf="!lastName.valid && lastName.touched" class="is-required">
+            The lastname is required
+          </span>
+      </p>
+      <p>
+          <label>Email</label>
+          <input type="email" name="email" #email="ngModel" [(ngModel)]="userModel.email" class="form-control" required>
+          <span *ngIf="!email.valid && email.touched" class="is-required">
+              The email is required
+            </span>
+        </p>
+        <p>
+            <label>Password</label>
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="userModel.password" class="form-control" required>
+            <span *ngIf="!password.valid && password.touched" class="is-required">
+                The password is required
+              </span>
+          </p>
+            <input type="submit" value="Submit" class="btn btn-primary" [disabled]="!registerForm.valid">
+  </form>
+</div>
