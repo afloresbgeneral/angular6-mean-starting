@@ -1,3 +1,24 @@
-<p>
-  login works!
-</p>
+  <h1>{{title}}</h1>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col col-4">
+              <form #loginForm="ngForm" (ngSubmit)="onSubmit()"  class="">
+                  <p>
+                    <label>Email</label>
+                    <input type="email" name="email" #email="ngModel" [(ngModel)]="userModel.email" class="form-control" required>
+                    <span *ngIf="!email.valid && email.touched">
+                      El email es obligatorio
+                    </span>
+                  </p>
+                  <p>
+                     <label>Password:</label>
+                     <input type="password" name="password" #password="ngModel" [(ngModel)]="userModel.password" class="form-control" required>
+                     <span *ngIf="!password.valid && password.touched">
+                        La contraseña es obligatoria
+                      </span>
+                    </p>
+                    <button type="submit" class="btn btn-success">Login</button>
+                </form>
+          </div>
+        </div>
+  </div>

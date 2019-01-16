@@ -1,5 +1,8 @@
 <div class="col-6">
-  <form action="" #registerForm="ngForm" (ngSubmit)="onSubmit()" class="col-10">
+  <div *ngIf="message" class="alert alert-success">
+    {{message}}
+  </div>
+  <form action="" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-10">
     <p>
       <label>Name</label>
       <input type="text" name="name" #name="ngModel" [(ngModel)]="userModel.name" class="form-control" required>

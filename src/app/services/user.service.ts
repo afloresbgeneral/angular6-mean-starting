@@ -15,9 +15,14 @@ export class UserService {
     }
 
     register(user: UserModel) {
-      const params = JSON.stringify(user);
+      //const params = JSON.stringify(user);
       const headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-      return this._http.post(this.url + 'register', params, {headers: headers});
+      return this._http.post(this.url + 'register', user, {headers: headers});
     }
+
+    login(user: UserModel) {
+        const headers = new HttpHeaders({'Content-Type': 'application/json'});
+        return this._http.post(this.url + 'login', user, {headers: headers});
+      }
 }

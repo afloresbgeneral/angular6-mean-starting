@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserModel } from 'src/app/models/user.model';
 import { GLOBAL } from '../../services/global';
 import { UserService } from 'src/app/services/user.service';
+import { UserServiceResponse } from '../../interfaces/response-interface';
+import { NgForm } from '../../../../node_modules/@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +12,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class RegisterComponent implements OnInit {
   public userModel: UserModel;
-  public responseTest: any;
+  public userServiceResponse: UserServiceResponse;
+  public message: string;
 
   constructor(
    public userService: UserService
@@ -23,10 +26,14 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  onSubmit() {
+  onSubmit(registerForm: NgForm) {
     this.userService.register(this.userModel).subscribe(
-      (response) => {
-        this.responseTest = response;
+      (response: UserServiceResponse) => {
+        if (response.user) {
+          this.userModel = response.user;
+          registerForm.reset();
+        }
+        this.message = response.message;
       }, error => {
         console.log('hey listen');
         console.log(error);
