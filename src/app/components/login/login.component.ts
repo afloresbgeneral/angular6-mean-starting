@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   userModel: UserModel;
 
-  constructor( userService: UserService) {
+  constructor( public userService: UserService) {
     this.userModel  = new UserModel('', '', '', '', '' , 'ROLE_USER', '');
 
    }
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userService.login()
+    this.userService.login(this.userModel);
     console.log(this.userModel);
   }
 
