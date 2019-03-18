@@ -1,5 +1,8 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import * as $ from 'jquery';
+import { UserService } from 'src/app/services/user.service';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,23 +10,29 @@ import * as $ from 'jquery';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, DoCheck {
   title = 'NG-ZOO';
   fromStorage: string;
+  public identity;
 
-  ngOnInit(): void {
-    //console.log(localStorage.getItem('emailContact'));
-
-  //   $(document).ready(function() {
-  //     $('button').click(function() {
-  //         console.log('hey ');
-  //         const div = $('div');
-  //         div.animate({left: '100px'}, 'slow');
-  //         div.animate({fontSize: '5em'}, 'slow');
-  //     });
-  // });
+  constructor(public userService: UserService, public router: Router) {
 
   }
+
+  ngOnInit(): void {
+    this.identity = this.userService.getIdentity();
+  }
+
+  ngDoCheck() {
+    this.identity = this.userService.getIdentity();
+  }
+
+  logout() {
+    localStorage.clear();
+    this.identity = null;
+    this.router.navigate(['login']);
+  }
+
 
 }
 

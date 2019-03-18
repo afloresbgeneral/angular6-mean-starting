@@ -20,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { UserService } from 'src/app/services/user.service';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserService } from 'src/app/services/user.service';
     KeeperComponent,
     SimpleTinyComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

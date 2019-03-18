@@ -15,7 +15,7 @@ export class UserService {
     }
 
     register(user: UserModel) {
-      //const params = JSON.stringify(user);
+      // const params = JSON.stringify(user);
       const headers = new HttpHeaders({'Content-Type': 'application/json'});
 
       return this._http.post(this.url + 'register', user, {headers: headers});
@@ -25,4 +25,22 @@ export class UserService {
         const headers = new HttpHeaders({'Content-Type': 'application/json'});
         return this._http.post(this.url + 'login', user, {headers: headers});
       }
+
+    getIdentity() {
+        return JSON.parse(localStorage.getItem('identity'));
+    }
+
+    geToken() {
+        return localStorage.getItem('token');
+    }
+
+    updateUser(user: UserModel) {
+        const headers = new HttpHeaders(
+            {
+                'Content-Type': 'application/json',
+                'authorization': this.geToken()
+            }
+        );
+        return this._http.put(this.url + 'update-user/' + user._id, user, {headers: headers});
+    }
 }

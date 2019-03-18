@@ -2,6 +2,10 @@
   <div *ngIf="message" class="alert alert-success">
     {{message}}
   </div>
+  <div *ngIf="status" class="alert alert-success">
+    Te has registrado correctamente, 
+    <a [routerLink]="['/login']">Logeate aquí</a>
+  </div>
   <form action="" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-10">
     <p>
       <label>Name</label>

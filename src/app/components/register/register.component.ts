@@ -14,11 +14,12 @@ export class RegisterComponent implements OnInit {
   public userModel: UserModel;
   public userServiceResponse: UserServiceResponse;
   public message: string;
+  public status: boolean;
 
   constructor(
    public userService: UserService
   ) {
-    this.userModel  = new UserModel('', '', '', '', '' , 'ROLE_USER', '');
+    this.userModel  = new UserModel('', '', '', '', '' , 'ROLE_USER', '', '');
 
   }
 
@@ -31,12 +32,14 @@ export class RegisterComponent implements OnInit {
       (response: UserServiceResponse) => {
         if (response.user) {
           this.userModel = response.user;
+          this.status = true;
           registerForm.reset();
         }
         this.message = response.message;
       }, error => {
         console.log('hey listen');
         console.log(error);
+        this.status = false;
       }
     );
   }
