@@ -7,6 +7,8 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
 import { FormsModule } from '../../../node_modules/@angular/forms';
 import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
 import { AdminRoutingModule } from './admin-routing.module';
+import { AdminGuard } from '../services/admin.guard';
+import { UserService } from 'src/app/services/user.service';
 
 
 @NgModule({
@@ -27,6 +29,6 @@ import { AdminRoutingModule } from './admin-routing.module';
     EditAdminComponent,
     AddAdminComponent
   ],
-  providers: []
+  providers: [AdminGuard, UserService]
 })
 export class AdminModule { }

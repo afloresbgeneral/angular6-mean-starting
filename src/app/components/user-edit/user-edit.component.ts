@@ -43,6 +43,7 @@ export class UserEditComponent implements OnInit {
       console.log('fILES TO UPLOAD', this.filesToUpload);
       // Subiendo la imagen del usuario
       if (this.filesToUpload) {
+        console.log('inside image');
       this.uploadService.makeFileRequest(this.url + 'upload-image-user/' + this.user._id, [], this.filesToUpload, this.token, 'image')
         .then((result: any) => {
           const parsedResult = JSON.parse(result);

@@ -2,4 +2,17 @@ body {
     background: #eee;
 }
 
+.img-edit {
+    width: 60px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 700px;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-right: 2px;
+}
+
 

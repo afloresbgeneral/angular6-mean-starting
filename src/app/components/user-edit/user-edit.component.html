@@ -28,6 +28,9 @@
         The email is required
       </span>
     </p>
+    <div *ngIf="user.image && user.image != null" >
+      <img class="img-edit" src="{{ url + 'get-image-file/' + user.image }}">
+    </div>
     <p>
       <label>Cambiar imagen</label><br>
       <input type="file" placeholder="Upload image" (change)="fileChangeEvent($event)">
