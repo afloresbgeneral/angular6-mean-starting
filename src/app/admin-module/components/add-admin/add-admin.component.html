@@ -2,10 +2,7 @@
 <div *ngIf="message" class="alert alert-success">
     {{message}}
   </div>
-  <div *ngIf="status" class="alert alert-success">
-    Te has registrado correctamente, 
-    <a [routerLink]="['/login']">Logeate aquí</a>
-  </div>
+
 <form #animalForm="ngForm" (ngSubmit)="addAnimal(animalForm)">
 
   <div class="form-group">
@@ -33,6 +30,13 @@
 
   </div>
 
+  
+  <p>
+    <label>Image</label>
+    <input type="file" id="admin-add-image" placeholder="Upload image"
+    (change)="fileChangeEvent($event)" required>
+  </p>
+  
   <input type="submit" value="Submit" class="btn btn-primary" [disabled]="!animalForm.valid">
 
 

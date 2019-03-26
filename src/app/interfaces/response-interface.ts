@@ -8,4 +8,5 @@ export interface UserServiceResponse {
 export interface AnimalServiceResponse {
     message: string;
     animal?: AnimalModel;
+    animals?: Array<AnimalModel>;
 }

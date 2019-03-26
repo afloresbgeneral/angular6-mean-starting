@@ -21,6 +21,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { UserService } from 'src/app/services/user.service';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     SimpleTinyComponent,
     LoginComponent,
     RegisterComponent,
-    UserEditComponent
+    UserEditComponent,
+    AnimalDetailComponent
   ],
   imports: [
     BrowserModule,

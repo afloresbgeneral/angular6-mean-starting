@@ -17,6 +17,7 @@ export class UploadService {
    }
 
    makeFileRequest(url: string, params: Array<string>, files: Array<File>, token: string, name: string) {
+     console.log('from makeFileRequest', files);
     return new Promise (function(resolve, reject) {
       const formData: any = new FormData();
       const xhr = new XMLHttpRequest();

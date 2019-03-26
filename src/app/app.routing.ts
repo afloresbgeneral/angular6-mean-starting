@@ -8,6 +8,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from 'src/app/components/user-edit/user-edit.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
     {path: 'edit-profile', component: UserEditComponent},
+    {path: 'animal-detail/:id', component: AnimalDetailComponent},
     {path: '**', component: HomeComponent}
 
 ];
