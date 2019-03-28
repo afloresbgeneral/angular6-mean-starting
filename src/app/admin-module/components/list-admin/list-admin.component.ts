@@ -34,7 +34,7 @@ export class ListAdminComponent implements OnInit {
       console.log(err);
     });
   }
-
+  // no se usa
   toAnimalDetail(id: string) {
     this.router.navigate(['/animal-detail']);
     console.log(id);

@@ -1,9 +1,10 @@
-  <div class="card" *ngIf="animal">
-    <div class="card-body">
+  <div class="card col-lg-5 card-item " *ngIf="animal">
+    <div class="col-lg-4 pull-left card-item">
+        <img class="card-img-bottom" src=" {{ url + 'get-image/' + animal.image }}" alt="Card image cap">
+    </div>
+    <div class="card-body col-lg-7 card-item">
       <h5 class="card-title">{{animal.name}}</h5>
       <p class="card-text">{{animal.description}}</p>
       <p class="card-text"><small class="text-muted">{{animal.year}}</small></p>
     </div>
-    <h1>{{ url + "get-image/"+ animal.image }}</h1>
-    <img class="card-img-bottom" src=" {{ url + 'get-image/' + animal.image }}" alt="Card image cap">
   </div>

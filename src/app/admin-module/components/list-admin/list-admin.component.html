@@ -15,7 +15,7 @@
           <td>{{animal.year}}</td>
           <td>
             <a [routerLink]="['../../animal-detail', animal._id]" class="btn btn-sm btn-success" ><span>View</span></a>
-            <button class="btn btn-sm btn-primary"><span>Edit</span></button>
+            <a [routerLink]="['../edit/', animal._id]" class="btn btn-sm btn-primary"><span>Edit</span></a>
             <button class="btn btn-sm btn-danger"><span>Delete</span></button>
           </td>
         </tr>

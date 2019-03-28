@@ -22,7 +22,7 @@ export class AnimalDetailComponent implements OnInit {
 
   constructor(private animalService: AnimalService,
               private userService: UserService,
-              private route: ActivatedRoute,
+              private activatedRoute: ActivatedRoute,
               private router: Router) {
         this.token = this.userService.geToken();
 
@@ -37,7 +37,7 @@ export class AnimalDetailComponent implements OnInit {
   }
 
   async getAnimal() {
-    this.route.params.forEach((params: Params) => {
+    this.activatedRoute.params.forEach((params: Params) => {
       this.id = params['id'];
       console.log('id from animal detail: ', this.id);
       this.animalService.findAnimal(this.id, this.token).subscribe((res: AnimalServiceResponse) => {
@@ -48,7 +48,7 @@ export class AnimalDetailComponent implements OnInit {
       });
     });
   }
-
+  // en este caso se llama a la imagen desde el html
   getAnimalImage() {
     this.animalService.getAnimalImage(this.token, this.id).subscribe( (res) => {
       console.log(res);

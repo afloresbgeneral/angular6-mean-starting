@@ -13,7 +13,7 @@ const adminRoutes: Routes = [
         canActivate: [AdminGuard],
         children: [
             {path: '', redirectTo: 'list', pathMatch: 'full'},
-            {path: 'edit', component: EditAdminComponent},
+            {path: 'edit/:id', component: EditAdminComponent},
             {path: 'list', component: ListAdminComponent},
             {path: 'add', component: AddAdminComponent},
         ]

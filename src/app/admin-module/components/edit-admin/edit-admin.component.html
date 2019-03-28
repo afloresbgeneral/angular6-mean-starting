@@ -1,1 +1,43 @@
-{{title}}
+<h2>{{title}}</h2>
+<div *ngIf="message" class="alert alert-success">
+    {{message}}
+  </div>
+
+<form #animalForm="ngForm" (ngSubmit)="editAnimal(animalForm)" *ngIf="state">
+
+  <div class="form-group">
+
+    <label for="exampleInputEmail1">Animal Name</label>
+    <input type="text" class="form-control"  id="admin-add-name" placeholder="*Elephant"
+     name="name" #name="ngModel" [(ngModel)]="animal.name" required>
+
+    <small id="nameHelp" class="form-text text-muted">Its important to clasify with names</small>
+
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Year</label>
+    <input type="text" class="form-control" id="admin-add-year" placeholder="*2017"
+    name="year" #year="ngModel" [(ngModel)]="animal.year" required>
+
+  </div>
+
+  <div class="form-group">
+
+    <label>Description</label>
+    <input type="text" class="form-control" id="admin-add-description" placeholder="..."
+    name="description" #description="ngModel" [(ngModel)]="animal.description" required>
+
+  </div>
+
+  
+  <p>
+    <label>Image</label>
+    <input type="file" id="admin-add-image" placeholder="Upload image"
+    (change)="fileChangeEvent($event)" required>
+  </p>
+  
+  <input type="submit" value="Submit" class="btn btn-primary" [disabled]="!animalForm.valid">
+
+
+</form>

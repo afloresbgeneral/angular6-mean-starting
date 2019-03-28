@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { GLOBAL } from './global';
+import { AnimalModel } from '../models/animal.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,7 @@ export class AnimalService {
   }
 
   findAnimal(id, token) {
+    console.log('id from service', id);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'authorization': token
@@ -44,5 +46,14 @@ export class AnimalService {
     });
     return this._http.get(this.url + 'get-image/' +  id + '.png', {headers: headers});
 
+  }
+
+  editAnimal(id, token, animal: AnimalModel) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'authorization': token
+    });
+
+    return this._http.put(this.url + 'update-animal/' + id, animal, {headers: headers});
   }
 }
