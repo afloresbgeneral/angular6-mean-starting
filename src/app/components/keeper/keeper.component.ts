@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {showAnimate} from '../animation';
+import { UserService } from 'src/app/services/user.service';
+import { GLOBAL } from 'src/app/services/global';
 
 @Component({
   selector: 'app-keeper',
@@ -9,9 +11,28 @@ import {showAnimate} from '../animation';
 })
 export class KeeperComponent implements OnInit {
 
-  constructor() { }
+  public keepers = Array<any> ();
+  public searchKeeper = '';
+  public url = GLOBAL.url;
+
+  constructor( public userService: UserService) { }
 
   ngOnInit() {
+    this.getKeepers();
+  }
+
+  getKeepers() {
+    this.userService.getKeepers().subscribe((res: any) => {
+      if (!res) {
+        alert('error');
+        return;
+      }
+      this.keepers = res.keepers;
+      console.log(res.keepers);
+
+    }, (err) => {
+      alert(err);
+    });
   }
 
 }

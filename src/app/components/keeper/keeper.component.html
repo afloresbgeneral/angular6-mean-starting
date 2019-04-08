@@ -1,6 +1,26 @@
-<div [@componentAnimation]>
-    <p>
-        keeper works!
-      </p>
-      
+<div class="row">
+    <div class="col-1">Search:</div>
+    <div class="col-5"> <input type="text" [(ngModel)]="searchKeeper"></div>
+    <div class="col-12" *ngIf="searchKeeper">Searching: <strong>{{searchKeeper}}</strong></div>
+    <br>
+    <br>
+
 </div>
+
+<table class="table">
+  <thead class="thead-default">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let keeper of keepers | search: searchKeeper; let i = index">
+      <td>{{i+1}}. {{keeper.name}}</td>
+      <td>{{keeper.email}}</td>
+      <div *ngIf="keeper.image && keeper.image != null" >
+            <img class="img-edit" src="{{ url + 'get-image-file/' + keeper.image }}">
+          </div>
+    </tr>
+  </tbody>
+</table>

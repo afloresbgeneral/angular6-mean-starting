@@ -22,6 +22,7 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { UserService } from 'src/app/services/user.service';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
+import { SearchPipe } from 'src/app/admin-module/search.pipe';
 
 @NgModule({
   declarations: [

@@ -16,6 +16,7 @@ export class ListAdminComponent implements OnInit {
   animals = new Array(10);
   animalsList = Array<AnimalModel>();
   token = '';
+  public search = '';
 
   constructor( private animalService: AnimalService,
                 private router: Router,

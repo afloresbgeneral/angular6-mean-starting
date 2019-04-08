@@ -1,6 +1,32 @@
-<div [@componentAnimation]>
-    <p >
-        animals works!
-      </p>
-      
+<h3>{{title}}</h3>
+
+<div class="row">
+  <div class="col-2">Search:</div>
+  <div class="col-5">
+    <input type="text" [(ngModel)]="search">
+  </div>
+  <div *ngIf="search" class="col-12 label label-success">Searching: <strong>{{search}}</strong></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-5">
+    <table class="table">
+      <thead class="thead-default">
+        <tr>
+          <th>Name</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let animal of animalsList | search: search; let i = index">
+          <!-- <tr *ngFor="let animal of animalsList; let i = index"> -->
+
+          <td>{{i+1}}. {{animal.name}}</td>
+          <td>{{animal.year}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

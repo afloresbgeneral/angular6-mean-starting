@@ -41,4 +41,8 @@ export class UserService {
         );
         return this._http.put(this.url + 'update-user/' + user._id, user, {headers: headers});
     }
+
+    getKeepers() {
+        return this._http.get( this.url + 'get-keepers');
+    }
 }

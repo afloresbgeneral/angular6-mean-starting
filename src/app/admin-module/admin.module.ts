@@ -9,13 +9,15 @@ import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminGuard } from '../services/admin.guard';
 import { UserService } from 'src/app/services/user.service';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
   declarations: [MainAdminComponent,
                  ListAdminComponent,
                  EditAdminComponent,
-                 AddAdminComponent
+                 AddAdminComponent,
+                 SearchPipe
                 ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { UserService } from 'src/app/services/user.service';
     MainAdminComponent,
     ListAdminComponent,
     EditAdminComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    SearchPipe
   ],
   providers: [AdminGuard, UserService]
 })
