@@ -16,7 +16,7 @@ export class EditAdminComponent implements OnInit {
 
   title = 'Edit Admin';
   public animal: AnimalModel;
-  public status: false;
+  public status = false;
   public message: string;
   private id: string;
 
@@ -59,6 +59,7 @@ export class EditAdminComponent implements OnInit {
     this.animalService.findAnimal(id, this.userService.geToken()).subscribe( (res: AnimalServiceResponse) => {
       console.log('FROM edit admin', res.animal);
       this.animal = res.animal;
+      this.status = true;
     }, (err) => {
 
     } );

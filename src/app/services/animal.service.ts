@@ -10,6 +10,7 @@ import { AnimalModel } from '../models/animal.model';
 export class AnimalService {
 
   url: string;
+  
 
   constructor(private _http: HttpClient) {
     this.url = GLOBAL.url;
@@ -55,5 +56,18 @@ export class AnimalService {
     });
 
     return this._http.put(this.url + 'update-animal/' + id, animal, {headers: headers});
+  }
+
+  deleteAnimal(token, id) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'authorization': token
+    });
+
+    const options = {
+      headers: headers
+    };
+
+    return this._http.delete(this.url + 'delete-animal/' + id, options);
   }
 }
